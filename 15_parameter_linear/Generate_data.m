@@ -55,7 +55,7 @@ for i=1:N-k
 end
 
 %%
-w=pinv(x_train' * x_train + 0.1 )* x_train'* y_train;    %% optimaze the W
+w=pinv(x_train' * x_train + 0.1 )* x_train'* y_train;    %% optimaze the W and add the 0.1 regularization to avoid the overffiting
 y_train_pred=x_train*w;    %% predict the training y
 y_test_pred=x_test*w;      %% predict the testing y
 error_train=mean((y_train-y_train_pred).^2);   %% caculate the MSE of the training
